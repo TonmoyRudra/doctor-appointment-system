@@ -1,0 +1,96 @@
+.container {
+  width: 80%;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.selection {
+  width: 100%;
+  height: 80px;
+}
+
+.calender-container {
+  width: 100%;
+  padding: 0px;
+  margin-bottom: 50px;
+}
+
+.button {
+  text-transform: uppercase !important;
+  font-weight: 500px !important;
+  background: #009688 !important;
+  font-size: 14px !important;
+  padding: 0.5px 15px;
+  height: 52px;
+  color: white;
+}
+
+:host ::ng-deep .mat-form-field-wrapper {
+  width: 200px;
+}
+
+.mat-grid-tile {
+  /* //border: 1px solid gray;  */
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.appointment-list-container {
+  width: 90%;
+  text-align: center;
+}
+
+.date {
+  text-align: center;
+  width: 100%;
+  background-color: #ff5722;
+  font-family: 'Roboto';
+  font-weight: 500;
+}
+
+.appointment-list {
+  width: 100%;
+  height: 70px;
+  overflow-y: scroll;
+  margin-top: 4px;
+}
+
+.emptyContent {
+  height: 50px;
+  width: 100%;
+  margin-top: 4px;
+  font-size: 14px;
+  text-align: center;
+  font-weight: 500;
+  padding-top: 20px;
+  color: red;
+}
+
+.appointment {
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: rgb(0 0 0 / 15%) 1.95px 1.95px 2.6px;
+  margin-bottom: 4px;
+  font-size: 14px;
+  height: 20px;
+  background-color: #8bc34a;
+}
+
+:host ::ng-deep .mat-form-field-infix {
+  padding: 10px 0 10px 0px !important;
+}
+
+.month-name {
+  height: 50px;
+  background-color: #03a9f4;
+  color: black;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: left;
+  padding: 0px;
+  width: 100%;
+}
+
+.month-name span {
+  margin-left: 12px !important;
+}

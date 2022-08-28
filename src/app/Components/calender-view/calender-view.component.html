@@ -1,0 +1,39 @@
+<div class="container" fxLayout="column" fxLayoutGap="15px" fxLayoutAlign="center start">
+  <mat-card class="selection" fxLayout="row" fxLayoutGap="25px" fxLayoutAlign="space-between space-between">
+
+      <mat-form-field fxFlex="50" appearance="outline">
+          <mat-label>Month</mat-label>
+          <mat-select (selectionChange)="changedMonth($event.value)" [value]="selectedMonth.number">
+              <mat-option *ngFor="let month of monthInformation" [value]="month.number">
+                  {{month.fullName}}
+              </mat-option>
+          </mat-select>
+      </mat-form-field>
+
+      <button mat-button class="button" (click)="openCreateAppiontmentModal()">
+          Create Appointment
+      </button>
+
+  </mat-card>
+  <mat-card class="month-name" fxLayout="column" fxLayoutAlign="center start">
+      <span>{{selectedMonth.fullName}}'s Appointment List</span>
+  </mat-card>
+  <!-- <div style="width: 100%; background-color: red; height: 100px;"> </div>  (click)="openAppiontmentDetailModal('11')"> -->
+  <mat-card class="calender-container">
+      <mat-grid-list cols="6" rowHeight="130px">
+          <mat-grid-tile *ngFor='let loop of numberReturn() ;let i= index'>
+              <div class="appointment-list-container" fxLayout="column" fxLayoutGap="8px" fxLayoutAlign="start start">
+                  <span class="date"> {{this.selectedMonth.shortName}} {{i+1}}</span>
+                  <div *ngIf="renderedData[i].length > 0;else emptyContent" class="appointment-list">
+                      <div *ngFor='let appointmentData of renderedData[i]; let j = index' class="appointment"
+                          (click)="openAppiontmentDetailModal(i,j)"> &nbsp; Appointment {{j+1}}
+                      </div>
+                  </div>
+                  <ng-template #emptyContent>
+                      <div class="emptyContent">No Appointment</div>
+                  </ng-template>
+              </div>
+          </mat-grid-tile>
+      </mat-grid-list>
+  </mat-card>
+</div>
